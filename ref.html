@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Reviews</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .review-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .review-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .review-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .employee-img {
+            width: 150px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .employee-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .employee-position {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .employee-review {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        button.prev, button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button.prev {
+            left: 10px;
+        }
+
+        button.next {
+            right: 10px;
+        }
+
+        button.prev:hover, button.next:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .review-card {
+                padding: 15px;
+            }
+
+            .employee-name {
+                font-size: 20px;
+            }
+
+            .employee-position {
+                font-size: 16px;
+            }
+
+            .employee-review {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="review-container">
+        <h2 class="review-title">Employee Reviews</h2>
+        
+        <div class="slider">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="images/employee1.jpg" alt="Employee 1" class="employee-img">
+                        <p class="employee-name">Gobinath P</p>
+                        <p class="employee-position">Software Developer (TL)</p>
+                        <p class="employee-review">"Working at this company has been an amazing experience. The culture here is inclusive, and I have learned so much in the past two years!"</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="images/employee2.jpg" alt="Employee 2" class="employee-img">
+                        <p class="employee-name">Esai Yazhini P</p>
+                        <p class="employee-position">Software Developer</p>
+                        <p class="employee-review">"The company offers a great work-life balance, and I feel valued as an employee. The growth opportunities are tremendous!"</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="images/employee3.jpg" alt="Employee 3" class="employee-img">
+                        <p class="employee-name">Apoorva Dharshini J</p>
+                        <p class="employee-position">Software Developer</p>
+                        <p class="employee-review">"The collaborative environment has allowed me to bring my creativity to life. I love being part of a team that fosters innovation!"</p>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="images/employee4.jpg" alt="Employee 4" class="employee-img">
+                        <p class="employee-name">Vinothini</p>
+                        <p class="employee-position">Software Developer</p>
+                        <p class="employee-review">"The collaborative environment has allowed me to bring my creativity to life. I love being part of a team that fosters innovation!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 0;
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            document.querySelector('.prev').addEventListener('click', () => {
+                slideIndex = (slideIndex > 0) ? slideIndex - 1 : totalSlides - 1;
+                updateSlider();
+            });
+
+            document.querySelector('.next').addEventListener('click', () => {
+                slideIndex = (slideIndex < totalSlides - 1) ? slideIndex + 1 : 0;
+                updateSlider();
+            });
+
+            function updateSlider() {
+                const width = slides.clientWidth;
+                slides.style.transform = `translateX(${-width * slideIndex}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
