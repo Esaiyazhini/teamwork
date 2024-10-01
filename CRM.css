@@ -1,33 +1,67 @@
-/* slide show*/
-body{
-  background-image: url('c:\\Users\\Software_PC\\Downloads\\pikaso_texttoimage_a-vibrant-coworking-space-filled-with-professional.jpeg');
-  background-repeat: no-repeat;
-
+body {
+    background-image: url('c:\\Users\\Software_PC\\Downloads\\pikaso_texttoimage_a-vibrant-coworking-space-filled-with-professional.jpeg');
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 
-/*box*/
-.homebox{
-    width: 800px;
+@media (max-width: 768px) {
+    body {
+        background-size: contain; 
+        background-position: top; 
+    }
+}
+
+.homebox {
+    width: 80%;
+    max-width: 800px;
     height: 300px;
-   background-color: whitesmoke;
-   opacity: 0.5;
+    background-color: #ffffff;
+    opacity: 0.5; 
     text-align: center;
-    margin-top: 150px;
-    margin-left: 200px;
-   
+    margin: 150px auto 0; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
-.para{
 
+.para {
     color: black;
     font-size: 30px;
+    text-align: center;
+    margin-top: -10px;
+}
 
- text-align: center;
- margin-top: -10px;
+.text {
+    color: black;
 }
-.text{
-    color:black;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .homebox {
+        width: 90%;
+        height: 250px;
+    }
+
+    .para {
+        font-size: 24px;
+    }
 }
+
+@media (max-width: 480px) {
+    .homebox {
+        width: 95%;
+        height: 220px;
+    }
+
+    .para {
+        font-size: 20px;
+    }
+}
+
+
+
 
 /*menu */
 
