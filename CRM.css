@@ -1,11 +1,23 @@
 /* Responsive Body Background */
 body {
-    background-image: url('https://github.com/Esaiyazhini/teamwork/commits/main/pikaso_texttoimage_a-vibrant-coworking-space-filled-with-professional.jpeg');
+    background-image: url('c:\\Users\\Software_PC\\OneDrive\\Desktop\\ETS IT\\pikaso_texttoimage_a-vibrant-coworking-space-filled-with-professional.jpeg');
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-repeat: no-repeat;
+    background-size: 100% 700px;
+   
+
 }
+
+/* Optional media queries for further responsiveness */
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Adjust to contain for smaller screens */
+        background-position: top;
+    }
+}
+
 
 /* Homebox styling */
 .homebox {
@@ -38,15 +50,18 @@ body {
 @media (max-width: 768px) {
     .homebox {
         width: 90%;
-        padding: 20px; /* Reducing padding for smaller devices */
+        padding: 20px; 
+   margin-top: 30px;
+   width: 380px;
+   height: 130px;
     }
 
     .para {
-        font-size: 24px;
+        font-size: 16px;
     }
 
     .text {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -541,7 +556,7 @@ margin-top: 60px;
 
 
         /* features*/
-        .features{
+        .features {
             text-align: center;
             font-size: 35px;
             color: #777;
@@ -550,6 +565,37 @@ margin-top: 60px;
             font-weight: bold;
             letter-spacing: 5px;
         }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .features {
+                font-size: 30px;
+                margin-top: 250px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .features {
+                font-size: 28px;
+                margin-top: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                font-size: 25px;
+                margin-top: 150px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features {
+                font-size: 22px;
+                margin-top: 100px;
+                letter-spacing: 3px;
+            }
+        }
+        
 
 /* benifit services */
 .attractiveText {
