@@ -79,155 +79,111 @@ body {
         font-size: 14px;
     }
 }
-
-/* Responsive Menu */
-nav {
-    display: flex;
-    height: 70px;
-    background: rgb(168, 201, 240);
-    opacity: 0.7;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
-    flex-wrap: wrap;
-}
-
-nav .logo {
-    color: #131010;
-    font-size: 35px;
-    font-weight: 600;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-}
-
-nav ul li {
-    margin: 0 5px;
-}
-
-nav ul li a {
-    color: #0f0c0c;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 15px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    border-bottom: 1.5px solid transparent;
-    transition: all 0.3s ease;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-    border-color: orange;
-    color: orange;
-}
-
-/* Responsive Menu Button */
-nav .menu-btn i {
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-/* Tablet view: max-width 1000px */
-@media (max-width: 1000px) {
-    nav {
-        padding: 0 40px;
+       /* Basic Navigation Styling */
+       nav {
+        display: flex;
+        height: 70px;
+        background: rgb(168, 201, 240);
+        opacity: 0.7;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px;
+        flex-wrap: wrap;
     }
-}
 
-/* Mobile view: max-width 920px */
-@media (max-width: 920px) {
-    nav .menu-btn i {
-        display: block;
+    .logo img {
+        width: 250px;
+        height: auto;
+        max-width: 100%; /* Image will scale with screen size */
     }
 
     nav ul {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background: #111;
-        height: 100vh;
-        width: 100%;
-        text-align: center;
-        z-index: 10;
-        display: block;
-        transition: all 0.3s ease;
-    }
-
-    #click:checked ~ ul {
-        left: 0;
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
 
     nav ul li {
-        width: 100%;
-        margin: 40px 0;
+        margin: 0 15px;
     }
 
     nav ul li a {
-        width: 100%;
-        margin-left: -100%;
-        display: block;
-        font-size: 20px;
-        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    #click:checked ~ ul li a {
-        margin-left: 0;
-    }
-}
-
-/* Smaller screens: max-width 768px */
-@media (max-width: 768px) {
-    nav {
-        padding: 0 20px;
-    }
-
-    nav .logo {
-        font-size: 28px;
-    }
-
-    nav ul {
-        top: 70px;
-    }
-
-    nav ul li a {
+        color: #0f0c0c;
+        text-decoration: none;
         font-size: 18px;
-    }
-}
-
-/* Mobile small: max-width 600px */
-@media (max-width: 600px) {
-    nav {
-        height: 60px;
-        padding: 0 15px;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        border-bottom: 1.5px solid transparent;
+        transition: all 0.3s ease;
     }
 
-    nav .logo {
-        font-size: 24px;
+    nav ul li a.active,
+    nav ul li a:hover {
+        border-color: orange;
+        color: orange;
     }
 
-    nav ul li a {
-        font-size: 16px;
+    /* Responsive Image Adjustments */
+    @media (max-width: 1200px) {
+        .logo img {
+            width: 200px;
+        }
     }
-}
 
-/* Extra small screens: max-width 500px */
-@media (max-width: 500px) {
-    .logo img {
-        width: 50px; /* Adjust logo image size */
+    @media (max-width: 992px) {
+        .logo img {
+            width: 180px;
+        }
     }
-}
 
+    @media (max-width: 768px) {
+        .logo img {
+            width: 150px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .logo img {
+            width: 120px;
+        }
+    }
+
+    /* Mobile Menu Button */
+    nav .menu-btn {
+        display: none;
+    }
+
+    /* Mobile Menu Responsive Design */
+    @media (max-width: 768px) {
+        nav .menu-btn {
+            display: block;
+            font-size: 22px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        nav ul {
+            flex-direction: column; /* Stack the menu items vertically */
+            position: absolute;
+            top: 70px; /* Below the nav */
+            left: 0;
+            background: rgb(168, 201, 240);
+            width: 100%; /* Full width */
+            padding: 0; /* Reset padding */
+            display: none; /* Hide by default */
+        }
+
+        nav.active ul {
+            display: flex; /* Show when nav is active */
+        }
+
+        nav ul li {
+            margin: 10px 0; /* Add spacing between items */
+        }
+    }
 /* Base Styles */
 h1 {
     font-size: 60px;
